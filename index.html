@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+vZq0Uh7LIn7QDrAhT/XvdpZZCrwR4W5X0+1uEaK5q9uAk3m4n6d4wx7nZt3rEXc26dDadogcQ5xVxIw==" />
+
+  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="social.scss" />
+  <script src="scripts/index.js"></script>
+  <script>
+    const loader = document.getElementById(preloader);
+    function myFunction() {
+      preloader.style.display = "none";
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration here (Do not use the existing configuration)
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAVynsP4ooqQv_TzNlTrthMQpj0hA1lNok",
+      authDomain: "itsiot-2023.firebaseapp.com",
+      databaseURL: "https://itsiot-2023-default-rtdb.firebaseio.com",
+      projectId: "itsiot-2023",
+      storageBucket: "itsiot-2023.appspot.com",
+      messagingSenderId: "244664386335",
+      appId: "1:244664386335:web:fcd7c5d8b2004ed22da62a",
+      measurementId: "G-02YNCQTCFW"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+    // getting reference to the database
+    var database = firebase.database();
+
+    //getting reference to the data we want
+    var dataRef1 = database.ref('DHT/humidity');
+    var dataRef2 = database.ref('DHT/temperature');
+
+    //fetch the data
+    dataRef1.on('value', function (getdata1) {
+      var humi = getdata1.val();
+      document.getElementById('humidity').innerHTML = humi + "%";
+    })
+
+    dataRef2.on('value', function (getdata2) {
+      var temp = getdata2.val();
+      document.getElementById('temperature').innerHTML = temp + "&#8451;";
+    })
+
+
+
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <title>Document</title>
+</head>
+
+<body onload="myFunction()">
+  <!-- <body> -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="images/logo.svg" alt="logo" />
+
+      <div id="loader-title">
+        <center>
+          <p>Noida Institute of Engineering and Technology, Greater Noida</p>
+        </center>
+      </div>
+      <span id="loader"></span>
+    </div>
+  </div>
+  <div class="intro">
+    <p class="intro-header">
+      <span class="message">Welcome!</span>&nbsp;
+      <span class="message">Department</span>&nbsp;
+      <span class="message">of</span>&nbsp;
+      <span class="message">IoT,</span>&nbsp;
+      <span class="message">NIET</span>
+    </p>
+  </div>
+
+  <header>
+    <div class="headsection">
+      <span id="headtxt">
+        <span class="headtxt" style="color: #00a6ff"> B.TECH IN </span>
+        <span class="headtxt">
+          COMPUTER SCIENCE AND ENGINEERING <br />(INTERNET OF THINGS) (IoT)
+        </span>
+      </span>
+      <img class="headgif" src="images/headgif1.gif" alt="IoT ANIMATION" />
+    </div>
+  </header>
+
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="#about-the-course">&nbsp About The Course &nbsp</a></li>
+      <li><a href="#hod">&nbsp Head Of Department &nbsp </a></li>
+      <li>
+        <a href="#research-and-publication">&nbsp Research And Publication &nbsp </a>
+      </li>
+      <li><a href="#technical-club">&nbsp Technical Club &nbsp</a></li>
+    </ul>
+  </nav>
+
+  <div id="about-the-course" class="content-section">
+    <div class="about-course">
+      <h2>About The Course</h2>
+
+      <div class="about-the-course-content">
+
+        <br>
+        <table>
+          <tr>
+            <th>Duration</th>
+            <th>Intake</th>
+            <th>Department</th>
+            <th>Approvals</th>
+          </tr>
+          <tr>
+            <td>4 years (8 Semesters)</td>
+            <td>120</td>
+            <td>ARM, PTC Thingworx, IBM Watson</td>
+            <td>AICTE</td>
+          </tr>
+        </table>
+        <br />
+        <div class="course-content">
+          <div class="about-course-content">
+            <div class="about-course-text">
+              <span class="text">Internet of Things</span> (IoT) is an interdisciplinary program which has
+              its application <span class="text">enormously increased</span> in the past few years since
+              it has a <span class="text">vast scope</span> of usage. IoT generally refers to a <span
+                class="text">growing
+                network</span> of <span class="text">internet-connected devices</span> that find various
+              applications in <span class="text">engineering</span> and <span class="text">sciences</span>. When objects
+              are
+              interconnected <span class="text">across the world</span>, it allows people or things using
+              those objects to be connected anytime. As an example, from <span class="text">urban
+                transport</span> to <span class="text">medical devices</span>, <span class="text">home
+                electronics</span>
+              and appliances to
+              cars, <span class="text">heart monitoring</span> implants and many more, all connected
+              things ease <span class="text">human life</span>.
+            </div>
+            <img class="about-course-gif" src="images/headgif.gif" alt="IoT ANIMATION" />
+          </div>
+          <div class="about-course-content">
+            <img class="about-course-gif"
+              src="https://i.pinimg.com/originals/5d/a3/11/5da311e193e3d828e956ed010f95891b.gif" alt="IoT ANIMATION" />
+            <div class="about-course-text">
+              IET offers a <span class="text">four-year</span> under-graduate <span class="text">B.Tech</span> course in
+              <span class="text">Internet of
+                Things</span> (IoT) which aims to train students to be equipped with a
+              solid <span class="text">theoretical foundation</span>, systematic <span class="text">professional
+                knowledge</span>
+              and strong <span class="text">practical skills</span> in the IoT field. Through the program,
+              the students shall have a thorough knowledge of <span class="text">electronic
+                engineering</span> and <span class="text">computer science</span> and a firm foundation into
+              <span class="text">wireless communication</span> and <span class="text">computer networks</span>. A deep
+              knowledge on
+              IoT devices, systems and networks is also included. The students
+              will develop strong skills in <span class="text">sensors & instrumentation</span>,
+              chip-design, and privacy & <span class="text">security</span> of IoT.
+            </div>
+          </div>
+
+          <div class="about-course-content">
+            <div class="about-course-text">
+              To enable the <span class="text">students</span> to keep pace with changing <span
+                class="text">technological</span>
+              advances, the institute has various industrial tie-ups like <span class="text">ARM,
+                PTC Thingworx, IBM Watson</span>. This course shall instill <span class="text">confidence</span> in
+              students to gain <span class="text">excellence</span> and <span class="text">success</span> in the field
+              of
+              IoT and
+              furnish in <span class="text">global standards</span>.
+            </div>
+            <img class="about-course-gif"
+              src="https://i.pinimg.com/originals/0c/64/9a/0c649a0c7f4c86a71aa4a89341e32881.gif" alt="IoT ANIMATION" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="highlights">
+      <h2>Highlights</h2>
+      <ul>
+        <li>
+          One of the top engineering colleges in Delhi NCR and first one to
+          offer the best B.Tech Program in Internet of Things.
+        </li>
+        <li>
+          Builds solid theoretical and strong practical skills in the fields
+          of communication networks and IT that provides a wide range of
+          applications in IoT through industry-oriented curriculum.
+        </li>
+        <li>
+          Learn through real-time industry projects sponsored by global
+          leaders in IoT industry and regular live sessions by industry
+          experts.
+        </li>
+        <li>
+          Provides expertise in ARM-based system-on-chip design and embedded
+          system, sensors and instrumentation, edge and cloud computing,
+          Digital Signal Processing etc.
+        </li>
+        <li>Chance to work on IBM Watson and PTC Thingworx platforms.</li>
+      </ul>
+    </section>
+    <section>
+      <div class="vision-mission">
+        <div class="gradient-border card-border">
+          <div class="card">
+            <h3><span>&nbsp;&nbsp;Vision&nbsp;&nbsp;</span></h3>
+            <p>
+              To establish the department of IoT as a hub of excellence, producing
+              highly competent, smart, ethical professionals and entrepreneurs to
+              serve humanity.
+            </p>
+          </div>
+        </div>
+        <div class="gradient-border card-border">
+          <div class="card">
+            <h3><span>&nbsp;&nbsp;Mission&nbsp;&nbsp;</span></h3>
+            <ul>
+              <li>
+                To impart quality education through leveraging resources,
+                facilities, and equipment in the area of Internet of Things.
+              </li>
+              <li>
+                To provide state-of-the-art facility in research, innovation, and
+                entrepreneurship, enabling students to create ethical solutions
+                for the betterment of the society.
+              </li>
+              <li>
+                To collaborate with the industry to keep pace with rapidly
+                changing technology for life-long learning.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="highlights">
+      <h2>Program Education Objective</h2>
+      <ul>
+        <li>
+          One of the top engineering colleges in Delhi NCR and first one to
+          offer the best B.Tech Program in Internet of Things.
+        </li>
+        <li>
+          Builds solid theoretical and strong practical skills in the fields
+          of communication networks and IT that provides a wide range of
+          applications in IoT through industry-oriented curriculum.
+        </li>
+        <li>
+          Learn through real-time industry projects sponsored by global
+          leaders in IoT industry and regular live sessions by industry
+          experts.
+        </li>
+        <li>
+          Provides expertise in ARM-based system-on-chip design and embedded
+          system, sensors and instrumentation, edge and cloud computing,
+          Digital Signal Processing etc.
+        </li>
+        <li>Chance to work on IBM Watson and PTC Thingworx platforms.</li>
+      </ul>
+    </section>
+    <section class="highlights">
+      <h2>Program Specific Outcomes</h2>
+      <ul>
+        <li>
+          One of the top engineering colleges in Delhi NCR and first one to
+          offer the best B.Tech Program in Internet of Things.
+        </li>
+        <li>
+          Builds solid theoretical and strong practical skills in the fields
+          of communication networks and IT that provides a wide range of
+          applications in IoT through industry-oriented curriculum.
+        </li>
+        <li>
+          Learn through real-time industry projects sponsored by global
+          leaders in IoT industry and regular live sessions by industry
+          experts.
+        </li>
+        <li>
+          Provides expertise in ARM-based system-on-chip design and embedded
+          system, sensors and instrumentation, edge and cloud computing,
+          Digital Signal Processing etc.
+        </li>
+        <li>Chance to work on IBM Watson and PTC Thingworx platforms.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div id="hod" class="content-section">
+
+    <section class="highlights">
+
+
+      <h2>HEAD OF THE DEPARTMENT</h2>
+      <div class="subsec">
+        <div class="hod-profile">
+          <p>
+            Mr. Mayank Deep Khare, Assistant Professor & Head of Computer Science and
+            Engineering (IoT) department at Noida Institute of Engineering &
+            Technology, Greater Noida, has research interest in Internet of Things
+            and Cloud Computing. He is pursuing Ph.D. in Computer Science from
+            National Institute of Technology, Delhi. He has teaching experience of
+            more than 6 years and one year of industry experience. He has published
+            research papers in reputed journals & conferences. He developed Online
+            PPT Monitoring system for maintaining teaching learning content through
+            out the institute. He also developed several IoT enabled solutions for
+            college campus like smart dustbins, Environmental monitoring setup etc.
+            He is Innovation Ambassador and NISP Coordinator AICTE for promoting
+            start-ups at institute.
+          </p>
+          <img src="images/hod.jpg" alt="hodImg">
+        </div>
+
+        <br>
+        <br>
+        <div class="hod-message">
+
+          <h3>HOD Message &nbsp &nbsp &nbsp</h3>
+          <p>
+            It gives me immense pleasure to introduce the Department of Computer Science and Engineering (IoT)
+            established in the year of 2020. We are witnessing an eminent digital transformation and the effects can be
+            seen globally. IoT is one of the most sought-after technologies in this digital arena. To keep pace with the
+            emerging technologies, the department caters to high quality education, in-depth knowledge of IoT
+            technologies, multi-disciplinary learning, and improvement in skills.
+            <br>
+            <br>
+            We are consistently striving hard towards providing innovative teaching and learning process that will
+            provide scope for the students to acquire knowledge for better opportunities, and achieve academic
+            excellence. With the vision of Smart cities students will be focussed towards Machine to Machine (M2M)
+            communication and IoT based solutions to the society.
+            <br>
+            <br>
+            To add to the standard of the teaching-learning process, motivated and skilled faculty members pay special
+            emphasis on teaching and hands-on practical work. To meet the objectives, the excellent infrastructure
+            includes labs with IoT kits, IBM Watson cloud, PCB designing setup 3D printing, smart manufacturing unit,
+            conducive environment for research activities, and initiatives for skill development play a key role.
+            <br>
+            <br>
+            We as a team resolve to take the department to newer heights of success and glory and prepare for the
+            forthcoming challenges.
+            <br>
+            <br>
+            “Keep Rewiring Yourself”
+            <br>
+            My best wishes to all !
+            <br>
+            <br>
+            Mr Mayank Deep Khare,
+            <br>
+            Head of CSE (IoT)
+            <br>
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+    <section class="highlights">
+      <h2>Publication/projects/Events undertaken</h2>
+      <ul>
+        <li>
+          24 papers published in reputed
+          journals - 5 Scopus index papers which include work on IoT, Cloud
+          Computing and Information Security.
+        </li>
+        <li>
+          Developed Online happiness quotient
+          for PPT monitoring system, faculty feedback and project management
+          (onlinehappinessquotient.co.in).
+        </li>
+        <li>
+          Developed International Conference data
+          handling website.
+        </li>
+        <li>
+          Coordinated Toycathon Physical and Software
+          Edition(2021,2022).
+        </li>
+        <li>
+          Coordinated Smart India Hackathon for last 3 years ( 2018, 2019, 2020 ).
+        </li>
+        <li>
+          Conference coordinator of International conference on Advances on computational Techniques and Research
+          Practices 2017 and 2018.
+        </li>
+        <li>
+          STTP coordinator of 4 AICTE Sponsored STTP on An Introduction to Internet
+          of Things(IoT) and Its Applications for Smart Transparent and Immutable
+          Ecosystem.
+        </li>
+        <li>
+          Undergone 5-day MDP on Startup Incubation and its Ecosystem in
+          India their applications at IIM Lucknow.
+        </li>
+        <li>
+          Undergone 5-day STC on Vision
+          Computer Graphics and their applications at IIT Roorkee.
+        </li>
+        <li>
+          Attended short
+          term course on 2G Vs 3G conducted by NITTR, Chandigarh.
+        </li>
+        <li>
+          Undergone 5-day
+          STC on Introduction to Cryptology at IIT Roorkee. Attended short term
+          course on Cloud Computing conducted by NITTR, Chandigarh.
+        </li>
+        <li>
+          Successfully
+          completed EMC Academic Associate, Cloud Infrastructure and Services
+          Certification.
+        <li>
+          Undergone International Training on IoT and it’s
+          Applications for Smart Cities conducted by ALTTC, Gaziabad.
+        </li>
+        <li>
+          Completed 12-week Introduction to Internet of Things NPTEL Course with 90% (Gold+Elite) marks.
+        </li>
+        </li>
+      </ul>
+    </section>
+    <section class="highlights">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Reviewer of Oxford University Press for the book of Internet of Things.</li>
+        <li>Got Best Paper award in an international conference (ICACEA) on the title A Review of Scalable Data Sharing
+          Techniques for Secure Cloud Storage</li>
+        <li>National Innovation and Start-up Policy Coordinator NIET</li>
+        <li>Innovation Ambassador MIC, AICTE</li>
+        <li>Member BOS, CS in Emerging Technologies, NIET, Gr. Noida 2020, 2021 &amp; 2022. </li>
+        <li>Star Performer of the Year 2020, NIET</li>
+        <li>Qualified GATE in year 2012 with 94 Percentile and 2 years research fellowship during P.G. program at MMMUT
+          Gorakhpur.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div id="research-and-publication" class="content-section">
+
+
+    <h2><strong>Research and Publication</strong></h2>
+    <div class="para">
+
+      <p>Shrivastava, P.S., Malviya, U.K., Meshram, M. and Dewangan, U.S., 2022. Title: Efficiency of Ultra-Dense
+        Multi-Tier Future Cellular Networks for 5G: A Survey. Wireless Personal Communications, 122(4), pp.3269-3291.
+      </p>
+
+    </div>
+    <div class="para">
+
+      <p>Singh, H., Kumar, V., Saxena, K. and Prasad, R., 2022. Title: A Smart Model for Prediction of Radio Wave
+        Attenuation Due to Clouds and Fog (SMRWACF). Wireless Personal Communications, 122(4), pp.3227-3245.</p>
+    </div>
+    <div class="para">
+
+      <p>Santosh Kumar, ERROR TRIMMING USING UNSYMMETRICAL TECHNIQUE IN AN TRANSMISION THROUGH IOT, Journal of
+        Fundamental and Comparative Research, IF=7.268, Vol-9, ISSue-02, N0-17,2022.</p>
+    </div>
+    <div class="para">
+
+      <p>Santosh Kumar, ASSIGNMENT OF UNIFORM WEIGHT ON PIXEL IN VISUAL CRYPTOGRAPHY USING TECHNIQUES OF IOT, INDUSTRIAL
+        ENGINEERING JOURNAL, ISSN:0970-2555 VOLUME 52 ISSUE 1. NO 1,JANUARY 2023. </p>
+    </div>
+    <div class="para">
+
+      <p>Jalali vatika, Voting System Through Blockchain Technology, International Conference on Emerging Technologies
+        and
+        Innovations, 01-02 March 2023, NIET Gr Noida. </p>
+    </div>
+    <div class="para">
+
+      <p>Obaidullah Khan, Mujaffar Husain (2023) "IOT Based Smart Hydroponic Farming System" International Conference on
+        Emerging Technologies and Innovations EmergIN-2023 01-02 March 2023, NIET Gr Noida. </p>
+    </div>
+    <div class="para">
+
+      <p>Hemant Singh, Mujaffar Husain (2023) "Land Registry data maintance using block chain" International Conference
+        on
+        Emerging Technologies and Innovations EmergIN-2023 01-02 March 2023, NIET Gr Noida. </p>
+    </div>
+    <div class="para">
+
+      <p>Sambhav Dev, MUJAFFAR HUSAIN (2023)"ChatGPT: An In-Depth Study of OpenAI's Large Language Model for
+        Conversational AI" International Conference on Emerging Technologies and Innovations EmergIN-2023 01-02 March
+        2023, NIET Gr Noida. </p>
+    </div>
+    <div class="para">
+
+      <p>Mujaffar Husain, Shivang Soni {2023} "A novel Model for Image recognition using Machine learning" International
+        Conference on Emerging Technologies and Innovations EmergIN-2023 01-02 March 2023, NIET Gr Noida. </p>
+    </div>
+    <div class="para">
+
+      <p>Neha Katiyar, Surbhi Sakshi, Priti Kumari, Jyoti Srivastava, "TRENDING IOT PLATFORMS MIDDLEWARE LAYER (2023).
+        Intelligent Analytics for Industry 4.0 Applications (1st ed.). CRC Press. https://doi.org/10.1201/9781003321149.
+      </p>
+    </div>
+    <div class="para">
+
+      <p>Km Ikra , Salman Khursheed Ahmad. (2023). Analysis Of Person Re-Identification Process In Closed World Scenario
+        Through Re-Ranking Method. Journal of Pharmaceutical Negative Results, 6972–6981.
+        https://doi.org/10.47750/pnr.2022.13.S07.8. </p>
+    </div>
+    <div class="para">
+
+      <p>Mayank Deep Khare, Prashant Pandey, Rajnish Kumar Rai, Ahmad MaazSustainable Smart Pot Retrofitting System
+        International Conference on Emerging Technologies and Innovations EmergIN-2023 01-02 March 2023, NIET Gr Noida.
+      </p>
+    </div>
+    <div class="para">
+
+      <p>Mayank Deep Khare , Dilip Kumar , Chirag Singh, Priyanshi Trivedi "A Comparative Study on Data Deduplication
+        Based on Cloud Computing Architecture" International Conference on Emerging Technologies and Innovations
+        EmergIN-2023 01-02 March 2023, NIET Gr Noida.</p>
+    </div>
+    <div class="para">
+
+      <p>Vanshika Rana, Vani, Abhishek Yadav, Mayank Deep Khare An Investigation on Backup and Restoring data Techniques
+        in Cloud Data Centers International Conference on Emerging Technologies and Innovations EmergIN-2023 01-02 March
+        2023, NIET Gr Noida.</p>
+    </div>
+    <div class="para">
+
+      <p>Prashant Kumar Singh , Amiy Krishna Gupta, Poorvi Gupta , Mayank Deep Khare A Survey on IoT based Hydroponic
+        Farming International Conference on Emerging Technologies and Innovations EmergIN-2023 01-02 March 2023, NIET Gr
+        Noida.</p>
+    </div>
+  </div>
+
+
+  <div id="technical-club" class="content-section">
+    <h2>Signodes</h2>
+    <p>Club Name: Signodes CSE(IoT), School of computer science and Emerging Technologies, NIET, Greater Noida</p>
+    <a href="https://www.niet.co.in/btech-in-computer-science-and-engineering-internet-of-things.php#TechnicalClub">
+    <button>visit </button>
+    </a>
+
+  </div>
+
+  <div class="line"></div>
+  <div class="socials">
+    <div class="social-coffee">
+
+      <div class="social" id="socialmedia">
+        <span>Connect with me on <span class="purple">social Media</span>&nbsp: </span>
+        <div class="social-buttons">
+          <a href="#" class="social-button github">
+            <svg class="cf-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
+              <path
+                d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
+              </path>
+            </svg>
+          </a>
+          <a href="#" class="social-button linkedin">
+            <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Icons" stroke="none" stroke-width="1">
+                <g transform="translate(-702.000000, -265.000000)">
+                  <path
+                    d="M746,305 L736.2754,305 L736.2754,290.9384 C736.2754,287.257796 734.754233,284.74515 731.409219,284.74515 C728.850659,284.74515 727.427799,286.440738 726.765522,288.074854 C726.517168,288.661395 726.555974,289.478453 726.555974,290.295511 L726.555974,305 L716.921919,305 C716.921919,305 717.046096,280.091247 716.921919,277.827047 L726.555974,277.827047 L726.555974,282.091631 C727.125118,280.226996 730.203669,277.565794 735.116416,277.565794 C741.21143,277.565794 746,281.474355 746,289.890824 L746,305 L746,305 Z M707.17921,274.428187 L707.117121,274.428187 C704.0127,274.428187 702,272.350964 702,269.717936 C702,267.033681 704.072201,265 707.238711,265 C710.402634,265 712.348071,267.028559 712.41016,269.710252 C712.41016,272.34328 710.402634,274.428187 707.17921,274.428187 L707.17921,274.428187 L707.17921,274.428187 Z M703.109831,277.827047 L711.685795,277.827047 L711.685795,305 L703.109831,305 L703.109831,277.827047 L703.109831,277.827047 Z"
+                    id="LinkedIn"></path>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="vl"></div> -->
+      <div class="social" id="coffee">
+        <span>
+          <span class="purple">Liked</span> my work? want to <span class="purple">support/thank</span> me?
+        </span>
+        <div class="coffee">
+          <a href="https://www.buymeacoffee.com/itsmeHrishi" target="_blank"><img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+              style="height: 60px !important;width: 217px !important;"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="gradient-border" id="box">
+      <div class="data-container">
+        <h3 class="purple">Live from IDEA-lab</h3>
+        <div class="data">
+          <div class="data-item">
+            <h2>Temperature</h2>
+            <p class="value purple" id="temperature">--</p>
+          </div>
+          <div class="data-item">
+            <h2>Humidity</h2>
+            <p class="value purple"  id="humidity">--</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="data">DHT Sensor Realtime Readings
+    <div class="data-container">
+      <div class="data-item">
+        <h2>Temperature</h2>
+        <p class="value" id="temperature">---</p>
+      </div>
+      <div class="data-item">
+        <h2>Humidity</h2>
+        <p class="value" id="humidity">---</p>
+      </div>
+    </div>
+  </div> -->
+
+
+  <footer>
+    <span><a href="https://github.com/itsmeHrishi">©
+        2022 HrishitoshThakur - https://github.com/itsmeHrishi</a></span>
+    <div>
+      <a href="http://linktr.ee/itshrishi_t"><img src="images/Linktree-Logo.png" alt="Linktree"  class="invert"/></a>
+    </div>
+  </footer>
+</body>
+
+</html>
