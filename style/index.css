@@ -203,10 +203,12 @@ header {
 /* media query for rensponsiveness */
 /* media query for rensponsiveness */
 /* media query for rensponsiveness */
+
+
 @media only screen and (max-width: 768px) {
-  *{
-    overflow-x: hidden;
-  }
+*{
+  overflow-x: hidden;
+}
   header{
     height: 90%;
     padding: 2%;
